@@ -1,0 +1,199 @@
+<!--Document   : citizenReg
+--!>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<%@page language="java" import="java.util.*"%>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+   function validateForm()
+{
+var x=document.forms["form1"]["txtname"].value;
+if (x==null || x=="")
+  {
+  alert("Please Enter Your Full Name !!!");
+  return false;
+  }
+
+var x=document.forms["form1"]["txtuname"].value;
+if (x==null || x=="")
+  {
+  alert(" Please Enter Your User Name !!!");
+  return false;
+  }
+
+var x=document.forms["form1"]["txtpass"].value;
+if (x==null || x=="")
+  {
+  alert(" Please Enter Your Password !!!");
+  return false;
+  }
+ if(form1.txtpass.value != form1.txtcpass.value)
+  {
+    alert("The Password and Confirm password does not match: Please Confirm Password !!!");
+    return false;
+  }
+
+ if ( ( form1.gender[0].checked == false ) && ( form1.gender[1].checked == false ) )
+ { alert ( "Please choose your Gender: Male or Female!!!" );
+     return false;
+ }
+
+ if ( ( form1.status[0].checked == false ) && ( form1.status[1].checked == false ) )
+ { alert ( "Please choose your Marital Status: Married or UnMarried !!!" );
+     return false;
+ }
+
+ var x=document.forms["form1"]["txtmail"].value;
+if (x==null || x=="" || x.indexOf('@',0)==-1 || x.indexOf('.')==-1)
+  {
+  alert("Please Enter Proper Value For your E-mail !!!");
+  return false;
+  }
+
+  if ( form1.sstate.selectedIndex == false )
+  { alert ( "Please Select One State !!! " );
+      return false;
+  }
+
+  if ( form1.scity.selectedIndex == false )
+  { alert ( "Please Select One City !!! " );
+      return false;
+  }
+ if ( ( form1.id[0].checked == false ) && ( form1.id[1].checked == false ) && ( form1.id[2].checked == false ) && ( form1.id[3].checked == false)  )
+ { alert ( "Please choose One ID Proof. !!!" );
+     return false;
+ }
+
+if ( form1.squs.selectedIndex == false )
+  { alert ( "Please Select One Security Question !!! " );
+      return false;
+  }
+var x=document.forms["form1"]["txtans"].value;
+if (x==null || x=="")
+  {
+  alert("Please Enter Your Security Answer !!!");
+  return false;
+  }
+  
+if ( form1.terms.checked == false )
+{ alert ( "Please check the Terms & Conditions box.!!!" );
+    return false;
+}
+
+
+      
+ return true;
+}
+    </script>
+        <style type="text/css">
+            <!--
+            .style1 {
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            .style6 {
+                font-family: "Times New Roman", Times, serif;
+                font-weight: normal;
+                font-size: 14px;
+                font-style: italic;
+            }
+            .style7 {
+                color: #FF0000;
+                font-size:large;
+            }
+            -->
+        </style>
+      </head>
+
+    <body>
+
+        <div id="container">
+            <!-- header -->
+            <div id="header">
+                <div id="logo"><a href="#">E-POLICE STATION</a></div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="AdLogin.html">Admin</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="index.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--end header -->
+            <!-- main -->
+            <br></br>
+            <div id="main">
+                <form action="CitizenRegis" method="post" name="form1" class="style1" onsubmit="return validateForm()" >
+                    <fieldset><legend><h2><font color="black">Citizen Registration Form</font></h2></legend></fieldset>
+                    <table width="731" border="1" align="center" bordercolor="#FF0000" bgcolor="#D8D889">
+                        <tr>
+                            <td width="721"><pre><span class="style1">                    Enter Full  Name   :   <input name="txtname" type="text" value="" size="40">                <span class="style7">*</span><span class="style6">Means Mandatary Field</span>
+
+                        Father's Name   :   <input type="text" name="txtfname" size="40">
+
+       Choose Your User Name   :   <input type="text" name="txtuname" size="40">
+
+                                 Password   :   <input type="password" name="txtpass" size="40">
+
+                  Confirm Password   :   <input type="password" name="txtcpass" size="40">
+
+                                    Gender   :   <input name="gender" type="radio" value="Male">Male          <input name="gender" type="radio" value="Female">Female
+
+                        Marital Status   :   <input name="status" type="radio" value="Married">Married     <input name="status" type="radio" value="UnMarried">Unmarried
+
+
+                                     E-mail   :   <input type="text" name="txtmail" size="40" value="">     </span><span class="style3"><span class="style6">
+                                                        (For Example: anyname@abc.com)</span></span><span class="style1">
+
+                              Mobile No.  :   <input type="text" name="txtnum" size="40" maxlength="10">
+                     <span class="style6">                                   *mandatary :Please Enter 10 Digit Only </span>
+
+                                  Address   :   <input name="txtadd" type="text" maxlength="100" size="40">
+
+                                       State   :   <select name="sstate"><option>-----------------Select One State------------------</option><option>Utter Pradesh</option><option>Madhya Pradesh</option><option>Bihar</option><option>Rajasthan</option><option>Gova</option><option>Uttrakhand</option></select>
+
+                                         City   :   <select name="scity"><option>-----------------Select One City---------------------</option><option>Lucknow</option><option>Allahabad</option><option>Varansi</option><option>Kanpur</option><option>Gajiyabad</option><option>Faizabad</option></select>
+
+
+                                 Pin Code   :   <input type="text" name="txtpin" size="40">
+
+                 <span class="style7">      *</span>    ID Proof   :  <input name="id" type="radio" value="Pan Card">Pan Card   <input name="id" type="radio" value="Driving License">Driving License  <input name="id" type="radio" value="Voter ID">Voter ID   <input name="id" type="radio" value="Smart Card">Smart Card
+
+Upload ID_Proof Scan Copy   :   <input name="copy" type="file" class="style1" size="34">
+
+                Security Questions   :   <select name="squs"><option>-----------------------Select One-----------------------</option><option>What is Your First Pet Name ?</option><option>What is Your First Mobile Number ?</option><option>What is Your First Best Childhood Friend ?</option><option>What is Your Favourite Author ?</option><option>What is The Title of Your Favourite Book ?</option></select>
+
+                          Your Answer   :   <input name="txtans" type="text" size="40" maxlength="50">
+
+                                                      <input name="terms" type="checkbox" class="style1" value="yes"></span><span class="style3"> Do You Agree to the terms &amp; conditions </span><span class="style1">
+
+
+                                                       <input name="Submit" type="submit" class="style1" value="Create My Account">
+</span></pre></td>
+                        </tr>
+                    </table>
+                
+ </form>
+            </div>
+            <!-- end main -->
+            <!-- footer -->
+            <div id="footer">
+                <div id="left_footer">
+                </div>
+                <div id="right_footer">
+                    <!-- DO NOT DELETE THIS LINK! READ THE LICENSE! -->
+                    <!-- ****************************************** -->
+                </div>
+            </div>
+            <!-- end footer -->
+        </div>
+    </body>
+</html>

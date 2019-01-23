@@ -1,0 +1,165 @@
+<%-- 
+    Document   : NgoReg
+--%>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+   function validateForm()
+{
+var x=document.forms["form1"]["txtid"].value;
+if (x==null || x=="")
+  {
+  alert("Please Enter NGO ID !!!");
+  return false;
+  }
+
+var x=document.forms["form1"]["txtuname"].value;
+if (x==null || x=="")
+  {
+  alert(" Please Enter Your User Name !!!");
+  return false;
+  }
+
+var x=document.forms["form1"]["txtpass"].value;
+if (x==null || x=="")
+  {
+  alert(" Please Enter Your Password !!!");
+  return false;
+  }
+ if(form1.txtpass.value != form1.txtcpass.value)
+  {
+    alert("The Password and Confirm password does not match: Please Confirm Password !!!");
+    return false;
+  }
+
+var x=document.forms["form1"]["txtcname"].value;
+if (x==null || x=="")
+  {
+  alert(" Please Enter Contact Name !!!");
+  return false;
+  }
+var x=document.forms["form1"]["txtcnum"].value;
+if (x==null || x=="")
+  {
+  alert(" Please Enter Contact Number !!!");
+  return false;
+  }
+var x=document.forms["form1"]["txtmail"].value;
+if (x==null || x=="" || x.indexOf('@',0)==-1 || x.indexOf('.')==-1)
+  {
+  alert("Please Enter Proper Value For your E-mail !!!");
+  return false;
+  }
+
+  if ( form1.squs.selectedIndex == false )
+  { alert ( "Please Select One Security Question !!! " );
+      return false;
+  }
+var x=document.forms["form1"]["txtans"].value;
+if (x==null || x=="")
+  {
+  alert("Please Enter Your Security Answer !!!");
+  return false;
+  }
+
+
+
+ return true;
+}
+    </script>
+        <style type="text/css">
+            <!--
+            .style1 {
+                font-family: "Times New Roman", Times, serif;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .style2 {
+                font-size: 14px;
+                font-style: italic;
+                font-weight: normal;
+            }
+            -->
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+            <!-- header -->
+            <div id="header">
+                <div id="logo"><a href="#">E-POLICE STATION</a></div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                       <li><a href="AdLogin.html">Admin</a></li>
+                        <li><a href="#">Contacts</a></li>
+                          <li><a href="index.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--end header -->
+            <!-- main -->
+            <div id="main">
+                <br></br>
+                </style>
+</head>
+
+<body>
+<form name="form1" method="post" action="NgoRegistration" class="style1" onsubmit="return validateForm()">
+<fieldset><legend><h2><font color="black">NGO Registration Form</font></h2></fieldset>
+  <table width="553" align="center" border="1" bordercolor="#FF0000" bgcolor="#D8D889">
+    <tr>
+      <td width="543"><pre class="style1">                           NGO_ID   :   <input name="txtid" type="text" size="39" maxlength="35"/>
+
+                     NGO_Name   :   <input name="txtname" type="text" size="39" maxlength="100"/>
+
+ Choose Your User Name   :   <input name="txtuname" type="text" size="39" maxlength="35"/>
+
+                           Password   :   <input name="txtpass" type="password" size="39" maxlength="35"/>
+
+            Confirm Password   :   <input name="txtcpass" type="password" size="39" maxlength="35"/>
+
+                            Address   :   <input name="txtadd" type="text" size="39" maxlength="200"/>
+
+                  Contact Name   :   <input name="txtcname" type="text" size="39" maxlength="35">
+
+                       Contact No.  :   <input type="text" name="txtcnum" size="39" maxlength="10"/>
+                                   <span class="style2">              *mandatary :Please Enter 10 Digits Only </span>
+
+            Contact E-mail ID   :   <input name="txtmail" type="text" size="39" maxlength="100"/>
+                                                  <span class="style2">(For Example: anyname@abc.com)</span>
+
+          Security Questions   :   <select name="squs"><option>-----------------------Select One-----------------------</option><option>What is Your First Pet Name ?</option><option>What is Your First Mobile Number ?</option><option>What is Your First Best Childhood Friend ?</option><option>What is Your Favourite Author ?</option><option>What is The Title of Your Favourite Book ?</option></select>
+
+                    Your Answer   :   <input name="txtans" type="text" size="39" maxlength="50">
+
+                                                 <input name="Submit" type="submit" class="style1" value="Create My Account"/>
+</pre></td>
+    </tr>
+  </table>
+</form>
+                <br> </br>
+
+            </div>
+            <!-- end main -->
+            <!-- footer -->
+            <div id="footer">
+                <div id="left_footer">
+                </div>
+                <div id="right_footer">
+                    <!-- DO NOT DELETE THIS LINK! READ THE LICENSE! -->
+                    <!-- ****************************************** -->
+                </div>
+            </div>
+            <!-- end footer -->
+        </div>
+    </body>
+</html>
